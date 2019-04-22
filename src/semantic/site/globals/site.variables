@@ -1,0 +1,27 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@darkpurple	: #272940;
+@medpurple	: #3a3e66;
+@purple		: #515587;
+@gray		: #585858;
+@lightgray	: #eeeeee;
+@darkgray	: #212121;
+@lightred	: #EB7777;
+@red		: #C41230;
+@darkred	: #733F43;
+@white		: #ffffff;
+
+@blue		: #4285F4;
+@skyblue	: #41b2F4;
+@gold		: #F1C232;
+
+@primaryColor : @red;
+
+@textColor: @darkgray;
+
+@fontSize: 12px;
+
+@pageFont : 'Oswald', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@headerFont : 'Oswald', 'Helvetica Neue', Arial, Helvetica, sans-serif;

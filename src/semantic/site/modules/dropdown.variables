@@ -1,0 +1,11 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+
+@menuBackground	: @darkpurple;
+
+@menuBorderWidth: 0px;
+@borderRadius	: none;
+
+@itemVerticalPadding: @tiny;

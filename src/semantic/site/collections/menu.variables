@@ -1,0 +1,52 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+/* Menu */
+@background : @primaryColor;
+@borderRadius: none;
+@border: none;
+
+@padding : 20px;
+@minHeight: (@itemVerticalPadding * 2) + 2em;
+
+@itemFontWeight: @bold;
+@itemVerticalPadding: 20px;
+
+@selectedTextColor: @white;
+@selectedItemTextColor: @white;
+
+@itemTextColor: @white;
+@hoverItemTextColor: @white;
+@activeItemTextColor: @white;
+
+@fontName : 'Oswald';
+
+/* Menu Dropdown */
+
+@dropdownItemColor 	   : @white;
+@dropdownItemBackground: @red;
+@dropdownItemFontWeight: @bold;
+@dropdownItemPadding: @relativeMedium @relativeMassive;
+@dropdownHoveredItemBackground: @darkred;
+@dropdownHoveredItemColor: @white;
+
+
+/*--------------
+     States
+---------------*/
+
+/* Hovered Item */
+@hoverItemBackground: @darkred;
+@hoverItemTextColor: @white;
+
+/* Pressed Item */
+@pressedItemBackground: @darkred;
+
+/* Active Item */
+@activeItemFontWeight: @bold;
+@activeItemBackground: @darkred;
+
+/* Active Hovered Item */
+@activeHoverItemBackground: @darkred;
+

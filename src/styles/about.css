@@ -1,0 +1,12 @@
+.ui.header.page-title {
+	font-size: 3rem;
+	color: #733F43;
+}
+
+.ui.grid.page-subcontent {
+	margin-top: 2em;
+}
+
+.page-subcontent .ui.segment {
+	min-height: 100%;
+}
