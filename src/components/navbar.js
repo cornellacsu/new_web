@@ -5,81 +5,67 @@ import React from "react"
 import "../styles/navbar.css"
 
 const Navbar = ({ siteTitle }) => (
-    <div>
-    <Container textAlign="center" className="site-header">
+    <div className="site-header">
+    <Container textAlign="left" className="header-content">
       <Header 
         className="orgname"
+        floated="left"
         as={Link}
         to="/"
+        
       >
         <Image
           className="logo"
-          // TODO replace w/ local paths
           src="images/logo_ACSU.png"
-          //src="https://acsu.cornell.edu/img/logo_ACSU_short_transparent.png"
           /> ACSU
-        </Header>
-    </Container>
-    
-    <Menu borderless stackable>
-    <Container className="navbar">
-        <Dropdown item text="ABOUT">
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} to="/about" text="WHAT IS ACSU?" />
-            <Dropdown.Item>OFFICERS</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+      </Header>
+      <Menu borderless stackable>
+        <Container className="navbar">
 
-        <Dropdown item text="EVENTS">
-          <Dropdown.Menu>
-            <Dropdown.Item>CALENDAR</Dropdown.Item>
-            <Dropdown.Item>G-BODY</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+         <Menu.Item as="a"
+          name="Team"
+        >
+          <div className="unslant">
+          Team
+          </div>
+          </Menu.Item>
 
-        <Dropdown item text="RESOURCES">
-          <Dropdown.Menu>
-            <Dropdown.Item>ACSU README</Dropdown.Item>
-            <Dropdown.Item>RESUME BOOK</Dropdown.Item>
-            <Dropdown.Item>CS WIKI</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <Menu.Item as="a"
+          name="Events"
+        >
+          <div className="unslant">
+          Events
+          </div>
+          </Menu.Item>
+
+        <Menu.Item as="a"
+          name="Resources"
+        >
+          <div className="unslant">
+          Resources
+          </div>
+        </Menu.Item>
+
+        <Menu.Item as="a"
+          name="Sponsors"
+        >
+          <div className="unslant">
+          Sponsors
+          </div>
+        </Menu.Item>
 
         <Menu.Item as="a"
           name="Sponsor"
         >
-          SPONSOR
+          <div className="unslant">
+          Join
+          </div>
           </Menu.Item>
 
-        <Menu.Item as="a"
-          name="Hacsu"
-        >
-          HACSU
-        </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Hacsu"
-        >
-          JOIN
-        </Menu.Item>
-
-        <Menu.Item as="a" header>
-        <Image
-          className="social-media-icon"
-          src="https://acsu.cornell.edu/img/icons/facebook-icon2.png"
-        />
-        </Menu.Item>
-
-        <Menu.Item as="a" header>
-        <Image
-          className="social-media-icon"
-          src="https://acsu.cornell.edu/img/icons/insta-icon.png"
-        />
-        </Menu.Item>
-
-      </Container> 
+        </Container> 
       </Menu>
-      </div>
+    </Container>
+    </div>
 )
 
 Navbar.propTypes = {

@@ -1,5 +1,18 @@
-.ui.header.orgname {
+.site-header {
+	box-shadow: 0 8px 4px -4px gray;
+}
+
+.ui.container.header-content {
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-around;
+}
+
+.ui.container .header.orgname {
 	font-size: 4rem;
+	margin-right: 2em;
+	margin-top: 0.5em;
 }
 
 .ui.header .ui.image.logo {
@@ -7,14 +20,19 @@
 	margin-top: 0;
 }
 
-.ui.image.social-media-icon {
-	max-width: 20px;
-}
-
-.ui.container.site-header {
-	margin-top: 1.5em;
-}
-
 .ui.container.navbar {
 	width: unset;
+}
+
+.ui.container .ui.menu {
+	margin: unset;
+	transform: skewX(-30deg);
+}
+
+.ui.menu .item{
+	font-size: 1.5em;
+}
+
+.ui.dropdown > .text, .ui.menu .unslant{
+	transform: skewX(30deg);
 }
