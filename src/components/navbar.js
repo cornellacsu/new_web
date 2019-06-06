@@ -46,9 +46,8 @@ const Navbar = ({ siteTitle }) => (
         </Dropdown>
 
         <Menu.Item as="a"
-          name="Sponsor"
-        >
-          SPONSOR
+          name="SPONSORS"
+          as={Link} to="/sponsors">
           </Menu.Item>
 
         <Menu.Item as="a"
