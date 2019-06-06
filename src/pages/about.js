@@ -5,7 +5,7 @@ import "../styles/about.css"
 
 const About = () => (
   <div>
-    <Navbar />
+    <Navbar activePage="about" />
     <Container textAlign="justified" text>
         <Header className="page-title" as="h1">About Us</Header>
         <Divider />

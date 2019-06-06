@@ -1,38 +1,75 @@
-.site-header {
-	box-shadow: 0 8px 4px -4px gray;
-}
-
-.ui.container.header-content {
-	width: 100%;
+.navbar {
 	display: flex;
-	align-items: stretch;
-	justify-content: space-around;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	height: 70px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.ui.container .header.orgname {
-	font-size: 4rem;
-	margin-right: 2em;
-	margin-top: 0.5em;
-}
-
-.ui.header .ui.image.logo {
-	width: 1.5em;
+.navbar .ui.menu {
 	margin-top: 0;
 }
 
-.ui.container.navbar {
-	width: unset;
+.navbar .ui.menu .active.item {
+	background-color: #585858;
 }
 
-.ui.container .ui.menu {
-	margin: unset;
-	transform: skewX(-30deg);
+.navbar .ui.menu .active.item:hover {
+	background-color: #585858;
 }
 
-.ui.menu .item{
-	font-size: 1.5em;
+.logo {
+	display: flex;
+	align-items: center;
+	margin-left: 15px;
+	margin-right: 45px;
+	width: 200px;
 }
 
-.ui.dropdown > .text, .ui.menu .unslant{
-	transform: skewX(30deg);
+.logo span {
+	margin-left: 10px;
+	font-size: 32px;
+	line-height: 70px;
+	color: black;
+}
+
+.logo-image {
+	height: 50px;
+	width: 50px;
+}
+
+.last {
+	margin-right: -10px;
+}
+
+/* .last:after {
+	width: 10px;
+	height: 70px;
+	background-color: #C41230;
+	position: absolute;
+	right: 0;
+	content: "";
+	transform: skewX(15deg);
+	z-index: 10000;
+} */
+
+.navbar-links {
+	flex-grow: 1;
+	align-items: stretch;
+	height: 70px;
+	padding-right: -20px !important;
+	overflow: hidden;
+	transform: skewX(-15deg);
+}
+
+.link {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-size: 20px;
+	/* transform: skewX(-15deg); */
+}
+
+.link span {
+	transform: skewX(15deg);
 }

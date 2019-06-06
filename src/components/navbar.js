@@ -1,79 +1,62 @@
 import { Link } from "gatsby"
-import { Menu, Dropdown, Container, Image, Header, Grid } from "semantic-ui-react"
-import PropTypes from "prop-types"
-import React from "react"
+import { Menu, Image } from "semantic-ui-react"
+import React, { Component } from "react"
 import "../styles/navbar.css"
 
-const Navbar = ({ siteTitle }) => (
-    <div className="site-header">
-    <Container textAlign="left" className="header-content">
-      <Header 
-        className="orgname"
-        floated="left"
-        as={Link}
-        to="/"
-        
-      >
-        <Image
-          className="logo"
-          src="images/logo_ACSU.png"
-          /> ACSU
-      </Header>
-      <Menu borderless stackable>
-        <Container className="navbar">
-
-         <Menu.Item as="a"
-          name="Team"
-        >
-          <div className="unslant">
-          Team
-          </div>
-          </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Events"
-        >
-          <div className="unslant">
-          Events
-          </div>
-          </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Resources"
-        >
-          <div className="unslant">
-          Resources
-          </div>
-        </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Sponsors"
-        >
-          <div className="unslant">
-          Sponsors
-          </div>
-        </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Sponsor"
-        >
-          <div className="unslant">
-          Join
-          </div>
-          </Menu.Item>
-
-        </Container> 
-      </Menu>
-    </Container>
-    </div>
+const Navbar = ({ activePage }) => (
+    <nav className="navbar">
+        <Link className="logo" to="/">
+            <Image className="logo-image" src="images/logo_ACSU.png" />
+            <span>ACSU</span>
+        </Link>
+        <Menu className="navbar-links" borderless stackable widths={5}>
+            <Menu.Item 
+                className="link"
+                as={Link}
+                to="/team"
+                name="team"
+                active={activePage === 'team'}
+            >
+                <span>Team</span>
+            </Menu.Item>
+            <Menu.Item 
+                className="link"
+                as={Link}
+                to="/events"
+                name="events"
+                active={activePage === 'events'}
+            >
+                <span>Events</span>
+            </Menu.Item>
+            <Menu.Item 
+                className="link"
+                as={Link}
+                to="/resources"
+                name="resources"
+                active={activePage === 'resources'}
+            >
+                <span>Resources</span>
+            </Menu.Item>
+            <Menu.Item 
+                className="link"
+                as={Link}
+                to="/sponsors"
+                name="sponsors"
+                active={activePage === 'sponsors'}
+            >
+                <span>Sponsors</span>
+            </Menu.Item>
+            <Menu.Item 
+                className="link last"
+                as={Link}
+                to="/join"
+                name="join"
+                active={activePage === 'join'}
+            >
+                <span>Join</span>
+            </Menu.Item>
+        </Menu>
+    </nav>
 )
-
-Navbar.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navbar.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Navbar
