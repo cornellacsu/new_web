@@ -1,41 +1,92 @@
-import React from "react"
-import { Container, Grid, Card, Image } from 'semantic-ui-react'
+import React, { Component } from "react"
+import { Container, Dropdown } from 'semantic-ui-react'
 import { StaticQuery, graphql } from "gatsby"
 import Navbar from "../components/navbar"
+import Officer from "../components/officer"
 import data from '../data/team.json'
+import "../styles/team.css"
 
-const officers = data.officers;
+class Team extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeTeam: 'Administrative'
+        }
+    }
 
-const cols = 4;
+    handleTeamChange = (_, { value }) => {
+        this.setState({ activeTeam: value })
+    }
 
-// const createOfficerGrid = (cols) => {
-//    var i,j;
-//    for( i = 0; i < officers.len(); i+= cols){
-//       console.log(cols,"cols")
-//    }
-// }
-
-const Team = () => (
-   <div>
-      <Navbar activePage="team" />
-      <p>team page</p>
-      <Grid columns={cols}> 
-      {
-         officers.map(officer => {
-            let grid = [];
-
-            grid.push((<Card textAlign="center" key={officer.email}>
-               <Image src={officer.img} circular />
-               <Card.Content>
-               <Card.Header>{`${officer.name} '${officer.year}`}</Card.Header> 
-               <Card.Meta>{officer.team}</Card.Meta>
-               </Card.Content>
-            </Card>))
-            return grid
-         })
-      }
-      </Grid>
-   </div>
-)
+    render() {
+        const officers = data.officers
+        const teamOptions = [
+            {
+                key: 'Administrative',
+                text: 'Administrative',
+                value: 'Administrative',
+            },
+            {
+                key: 'Design',
+                text: 'Design',
+                value: 'Design',
+            },
+            {
+                key: 'Social',
+                text: 'Social',
+                value: 'Social',
+            },
+            {
+                key: 'Corporate',
+                text: 'Corporate',
+                value: 'Corporate',
+            },
+            {
+                key: 'Academic',
+                text: 'Academic',
+                value: 'Academic',
+            },
+            {
+                key: 'Publicity',
+                text: 'Publicity',
+                value: 'Publicity',
+            },
+            {
+                key: 'Webdev',
+                text: 'Webdev',
+                value: 'Webdev',
+            },
+            {
+                key: 'Alumni',
+                text: 'Alumni',
+                value: 'Alumni',
+            },
+        ]
+        
+        return (
+            <div>
+                <Navbar activePage="team" />
+                <Container fluid>
+                    <h1 className="team-header">
+                        Meet the{' '}
+                        <Dropdown
+                            inline
+                            options={teamOptions}
+                            defaultValue={teamOptions[0].value}
+                            onChange={this.handleTeamChange}
+                        />
+                        {' '}Team
+                    </h1>
+                    <Container>
+                        <h2 className="officer-header">Team Leads</h2>
+                    </Container>
+                    <Container>
+                        <h2 className="officer-header">Officers</h2>
+                    </Container>
+                </Container>
+            </div>
+        )
+    }
+}
 
 export default Team

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+.container {
+    padding: 30px;
+}
+
+.team-header {
+    text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    color: #4385F4;
+}
+
+.officer-header {
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+}
