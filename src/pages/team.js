@@ -85,8 +85,8 @@ class Team extends Component {
                             {
                                 officers.filter(officer => {
                                     return officer.position.includes("Chair")
-                                }).map(teamLead => {
-                                    return <Officer {...teamLead} />
+                                }).map(officer => {
+                                    return <Officer {...officer} />
                                 })
                             }
                         </Grid>
@@ -97,8 +97,8 @@ class Team extends Component {
                             {
                                 officers.filter(officer => {
                                     return !officer.position.includes("Chair")
-                                }).map(teamLead => {
-                                    return <Officer {...teamLead} />
+                                }).map(officer => {
+                                    return <Officer {...officer} />
                                 })
                             }
                         </Grid>
