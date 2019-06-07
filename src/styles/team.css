@@ -4,7 +4,7 @@
     padding: 30px;
 }
 
-.team-header {
+.ui.header.team-header {
     text-align: center;
     font-family: Proxima Nova;
     font-style: normal;
@@ -13,7 +13,7 @@
     color: #4385F4;
 }
 
-.officer-header {
+.ui.header.officer-header {
     font-family: Comfortaa;
     font-style: normal;
     font-weight: bold;

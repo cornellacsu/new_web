@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container, Dropdown } from 'semantic-ui-react'
+import { Grid, Container, Dropdown, Header } from 'semantic-ui-react'
 import { StaticQuery, graphql } from "gatsby"
 import Navbar from "../components/navbar"
 import Officer from "../components/officer"
@@ -19,7 +19,7 @@ class Team extends Component {
     }
 
     render() {
-        const officers = data.officers
+        const officers = data.officers.filter(officer => officer.team.includes(this.state.activeTeam))
         const teamOptions = [
             {
                 key: 'Administrative',
@@ -63,11 +63,13 @@ class Team extends Component {
             },
         ]
         
+        console.log(officers)
+
         return (
             <div>
                 <Navbar activePage="team" />
                 <Container fluid>
-                    <h1 className="team-header">
+                    <Header className="team-header">
                         Meet the{' '}
                         <Dropdown
                             inline
@@ -76,12 +78,30 @@ class Team extends Component {
                             onChange={this.handleTeamChange}
                         />
                         {' '}Team
-                    </h1>
+                    </Header>
                     <Container>
-                        <h2 className="officer-header">Team Leads</h2>
+                        <Header as="h2" className="officer-header">Team Leads</Header>
+                        <Grid columns={3}>
+                            {
+                                officers.filter(officer => {
+                                    return officer.position.includes("Chair")
+                                }).map(teamLead => {
+                                    return <Officer {...teamLead} />
+                                })
+                            }
+                        </Grid>
                     </Container>
                     <Container>
-                        <h2 className="officer-header">Officers</h2>
+                        <Header as="h2" className="officer-header">Officers</Header>
+                        <Grid columns={3}>
+                            {
+                                officers.filter(officer => {
+                                    return !officer.position.includes("Chair")
+                                }).map(teamLead => {
+                                    return <Officer {...teamLead} />
+                                })
+                            }
+                        </Grid>
                     </Container>
                 </Container>
             </div>
