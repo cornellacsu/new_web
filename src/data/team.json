@@ -4,7 +4,7 @@
    "class_name": "selected",
    "officers": [{
          "name": "Jerry Qu",
-         "team": "Academic",
+         "team": "Administrative",
          "position": "President",
          "year": "20",
          "img": "1819/academic/Academic_JerryQu_20.jpg",
@@ -12,7 +12,7 @@
       },
       {
          "name": "Rachel Shim",
-         "team": "Social",
+         "team": "Administrative",
          "position": "President",
          "year": "20",
          "img": "1819/social/Social_RachelShim_20.jpg",
@@ -20,7 +20,7 @@
       },
       {
          "name": "Yizhou Yu",
-         "team": "Academic",
+         "team": "Administrative",
          "position": "Vice President",
          "year": "20",
          "img": "1819/academic/Academic_YizhouYu_20.jpg",
@@ -28,21 +28,21 @@
       },
       {
          "name": "Lucy Yang",
-         "team": "Publicity",
+         "team": "Administrative",
          "position": "Treasurer",
          "year": "22",
          "img": "1819/publicity/Publicity_LucyYang_22.jpg"
       },
       {
          "name": "Ryan Curtis",
-         "team": "Design",
+         "team": "Design & Administrative",
          "position": "Secretary & Design Chair",
          "year": "19",
          "img": "1819/social/Social_RyanCurtis_19.jpg"
       },
       {
          "name": "Helen Liang",
-         "team": "Social",
+         "team": "Social & Administrative",
          "position": "Secretary & Social Chair",
          "year": "21",
          "img": "1819/social/Social_HelenLiang_21.jpg"

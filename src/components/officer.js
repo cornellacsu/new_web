@@ -1,16 +1,14 @@
-import { Card, Image } from "semantic-ui-react"
+import { Image, Icon } from "semantic-ui-react"
 import { StaticQuery, graphql } from "gatsby"
 import React from "react"
 import "../styles/officer.css"
 
 const Officer = ({ name, position, year, img, email }) => (
-    <Card textAlign="center" key={email}>
-        <Image src={img} circular />
-        <Card.Content>
-        <Card.Header>{`${name} '${year}`}</Card.Header> 
-        <Card.Meta>{position}</Card.Meta>
-        </Card.Content>
-    </Card>
+    <div className="officer">
+        <Image src={img} rounded />
+        <h5>{`${name} '${year}`}</h5>
+        <p>{position} {email && <a href={`mailto:${email}@cornell.edu`}><Icon name="envelope" /></a>}</p>
+    </div>
 )
 
 export default Officer

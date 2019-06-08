@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Grid, Container, Dropdown, Header } from 'semantic-ui-react'
+import { Image, Container, Dropdown, Header } from 'semantic-ui-react'
 import { StaticQuery, graphql } from "gatsby"
 import Navbar from "../components/navbar"
 import Officer from "../components/officer"
@@ -80,30 +80,35 @@ class Team extends Component {
                         {' '}Team
                     </Header>
                     <Container>
-                        <Header as="h2" className="officer-header">Team Leads</Header>
-                        <Grid columns={3}>
+                        <Header as="h2" className="officers-header">Team Leads</Header>
+                        <div className="officers-container">
                             {
                                 officers.filter(officer => {
-                                    return officer.position.includes("Chair")
-                                }).map(officer => {
-                                    return <Officer {...officer} />
-                                })
+                                    if (this.state.activeTeam === "Administrative") {
+                                        return officer.position === "President"
+                                    } else {
+                                        return officer.position.includes("Chair")
+                                    }
+                                }).map(officer => <Officer {...officer} />)
                             }
-                        </Grid>
+                        </div>
                     </Container>
                     <Container>
-                        <Header as="h2" className="officer-header">Officers</Header>
-                        <Grid columns={3}>
+                        <Header as="h2" className="officers-header">Officers</Header>
+                        <div className="officers-container">
                             {
                                 officers.filter(officer => {
-                                    return !officer.position.includes("Chair")
-                                }).map(officer => {
-                                    return <Officer {...officer} />
-                                })
+                                    if (this.state.activeTeam === "Administrative") {
+                                        return officer.position !== "President"
+                                    } else {
+                                        return !officer.position.includes("Chair")
+                                    }
+                                }).map(officer => <Officer {...officer} />)
                             }
-                        </Grid>
+                        </div>
                     </Container>
                 </Container>
+                <Image className="background-illustration" src="images/computer.jpg" />
             </div>
         )
     }
