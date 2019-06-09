@@ -25,6 +25,15 @@
     flex-wrap: wrap;
 }
 
+.ui.dropdown {
+    border-bottom: 4px solid #4385F4;
+}
+
+.ui.dropdown:hover {
+    color: #9fc0f9;
+    /* color: #083a91; */
+}
+
 .ui.dropdown .menu {
     background-color: white;
 }
@@ -49,4 +58,19 @@
     margin-top: -250px;
     margin-right: -100px;
     opacity: 0.2;
+}
+
+@media only screen and (max-width: 768px) {
+    .container.fluid {
+        padding: 10px;
+    }
+
+    .ui.header.team-header {
+        padding-top: 10px;
+        font-size: 32px;
+    }
+
+    .ui.header.officers-header {
+        font-size: 22px;
+    }
 }
