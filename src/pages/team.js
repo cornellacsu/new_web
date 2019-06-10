@@ -8,7 +8,7 @@ import "../styles/team.css"
 
 class Team extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             activeTeam: 'Administrative'
         }
@@ -63,8 +63,6 @@ class Team extends Component {
             },
         ]
         
-        console.log(officers)
-
         return (
             <div>
                 <Navbar activePage="team" />
