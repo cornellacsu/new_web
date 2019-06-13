@@ -22,44 +22,36 @@ class Team extends Component {
         const officers = data.officers.filter(officer => officer.team.includes(this.state.activeTeam))
         const teamOptions = [
             {
-                key: 'Administrative',
                 text: 'Administrative',
-                value: 'Administrative',
+                value: 'Administrative'
             },
             {
-                key: 'Design',
                 text: 'Design',
-                value: 'Design',
+                value: 'Design'
             },
             {
-                key: 'Social',
                 text: 'Social',
-                value: 'Social',
+                value: 'Social'
             },
             {
-                key: 'Corporate',
                 text: 'Corporate',
-                value: 'Corporate',
+                value: 'Corporate'
             },
             {
-                key: 'Academic',
                 text: 'Academic',
-                value: 'Academic',
+                value: 'Academic'
             },
             {
-                key: 'Publicity',
                 text: 'Publicity',
-                value: 'Publicity',
+                value: 'Publicity'
             },
             {
-                key: 'Webdev',
                 text: 'Webdev',
-                value: 'Webdev',
+                value: 'Webdev'
             },
             {
-                key: 'Alumni',
                 text: 'Alumni',
-                value: 'Alumni',
+                value: 'Alumni'
             },
         ]
         

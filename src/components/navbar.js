@@ -3,6 +3,8 @@ import { Menu, Image, Icon } from "semantic-ui-react"
 import React, { Component } from "react"
 import "../styles/navbar.css"
 
+const MOBILE_BREAKPOINT = 768;
+
 class Navbar extends Component {
     constructor(props) {
         super(props)
@@ -16,15 +18,15 @@ class Navbar extends Component {
     }
     
     resize = () => {
-        let shouldShowNavbar = window.innerWidth > 768
+        let shouldShowNavbar = window.innerWidth > MOBILE_BREAKPOINT
         if (shouldShowNavbar !== this.state.navbarVisible) {
             this.setState({ navbarVisible: shouldShowNavbar })
         }
     }
 
     componentDidMount() {
-        window.addEventListener("resize", this.resize);
-        this.resize();
+        window.addEventListener("resize", this.resize)
+        this.resize()
     }
     
     componentWillUnmount() {
@@ -32,7 +34,8 @@ class Navbar extends Component {
     }
 
     render() {
-        const { activePage } = this.props;
+        const { activePage } = this.props
+        const pages = ["team", "events", "resources", "sponsors", "join"]
 
         return (
             <nav className="navbar">
@@ -42,51 +45,19 @@ class Navbar extends Component {
                     <span>ACSU</span>
                 </Link>
                 <Menu className={ this.state.navbarVisible ? "navbar-links visible" : "navbar-links hidden" } borderless stackable widths={5}>
-                    <Menu.Item 
-                        className="link"
-                        as={Link}
-                        to="/team"
-                        name="team"
-                        active={activePage === 'team'}
-                    >
-                        <span>Team</span>
-                    </Menu.Item>
-                    <Menu.Item 
-                        className="link"
-                        as={Link}
-                        to="/events"
-                        name="events"
-                        active={activePage === 'events'}
-                    >
-                        <span>Events</span>
-                    </Menu.Item>
-                    <Menu.Item 
-                        className="link"
-                        as={Link}
-                        to="/resources"
-                        name="resources"
-                        active={activePage === 'resources'}
-                    >
-                        <span>Resources</span>
-                    </Menu.Item>
-                    <Menu.Item 
-                        className="link"
-                        as={Link}
-                        to="/sponsors"
-                        name="sponsors"
-                        active={activePage === 'sponsors'}
-                    >
-                        <span>Sponsors</span>
-                    </Menu.Item>
-                    <Menu.Item 
-                        className="link last"
-                        as={Link}
-                        to="/join"
-                        name="join"
-                        active={activePage === 'join'}
-                    >
-                        <span>Join</span>
-                    </Menu.Item>
+                    {
+                        pages.map((page, idx) => 
+                            <Menu.Item
+                                className={idx !== pages.length - 1 ? "link" : "link last"}
+                                as={Link}
+                                to={`/${page}`}
+                                name={page}
+                                active={activePage === page}
+                            >
+                                <span>{page.charAt(0).toUpperCase() + page.slice(1)}</span>
+                            </Menu.Item>
+                        )
+                    }
                 </Menu>
             </nav>
         )

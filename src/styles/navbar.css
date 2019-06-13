@@ -96,11 +96,11 @@
 		flex-wrap: wrap;
 	}
 	
-	.visible {
+	.navbar-links.visible {
 		top: 70px;
 	}
 
-	.hidden {
+	.navbar-links.hidden {
 		top: -650px;
 	}
 
