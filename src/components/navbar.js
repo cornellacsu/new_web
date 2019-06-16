@@ -48,6 +48,7 @@ class Navbar extends Component {
                     {
                         pages.map((page, idx) => 
                             <Menu.Item
+                                key={idx}
                                 className={idx !== pages.length - 1 ? "link" : "link last"}
                                 as={Link}
                                 to={`/${page}`}

@@ -73,4 +73,12 @@
     .ui.header.officers-header {
         font-size: 22px;
     }
+
+    .officer {
+        width: 130px;
+    }
+
+    .ui.image.background-illustration {
+        display: none;
+    }
 }

@@ -10,7 +10,7 @@ class Team extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            activeTeam: 'Administrative'
+            activeTeam: 'Leadership'
         }
     }
 
@@ -22,8 +22,8 @@ class Team extends Component {
         const officers = data.officers.filter(officer => officer.team.includes(this.state.activeTeam))
         const teamOptions = [
             {
-                text: 'Administrative',
-                value: 'Administrative'
+                text: 'Leadership',
+                value: 'Leadership'
             },
             {
                 text: 'Design',
@@ -74,12 +74,12 @@ class Team extends Component {
                         <div className="officers-container">
                             {
                                 officers.filter(officer => {
-                                    if (this.state.activeTeam === "Administrative") {
+                                    if (this.state.activeTeam === "Leadership") {
                                         return officer.position === "President"
                                     } else {
                                         return officer.position.includes("Chair")
                                     }
-                                }).map(officer => <Officer {...officer} />)
+                                }).map((officer, idx) => <Officer key={idx} {...officer} />)
                             }
                         </div>
                     </Container>
@@ -88,12 +88,12 @@ class Team extends Component {
                         <div className="officers-container">
                             {
                                 officers.filter(officer => {
-                                    if (this.state.activeTeam === "Administrative") {
+                                    if (this.state.activeTeam === "Leadership") {
                                         return officer.position !== "President"
                                     } else {
                                         return !officer.position.includes("Chair")
                                     }
-                                }).map(officer => <Officer {...officer} />)
+                                }).map((officer, idx) => <Officer key={idx} {...officer} />)
                             }
                         </div>
                     </Container>
