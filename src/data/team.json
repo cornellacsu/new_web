@@ -83,7 +83,7 @@
       {
          "name": "Eric Feng",
          "team": "Webdev",
-         "position": "Web Dev Chair",
+         "position": "Webdev Chair",
          "year": "20",
          "img": "1819/web_dev/WebDev_EricFeng_20.jpg"
       },
@@ -243,22 +243,22 @@
       },
       {
          "name": "Michelle Wang",
-         "team": "Graphic Design",
-         "position": "Graphic Design",
+         "team": "Design",
+         "position": "Design",
          "year": "20",
          "img": "1819/graphic_design/GraphicDesign_MichelleWang_20.jpg"
       },
       {
          "name": "Daniel Lee",
-         "team": "Graphic Design",
-         "position": "Graphic Design",
+         "team": "Design",
+         "position": "Design",
          "year": "22",
          "img": "1819/graphic_design/GraphicDesign_DanielLee_22.jpg"
       },
       {
          "name": "Rose Zhou",
-         "team": "Graphic Design",
-         "position": "Graphic Design",
+         "team": "Design",
+         "position": "Design",
          "year": "22",
          "img": "1819/graphic_design/GraphicDesign_RoseZhou_22.jpg"
       },
@@ -293,21 +293,21 @@
       {
          "name": "Sandy Fang",
          "team": "Webdev",
-         "position": "Web Dev",
+         "position": "Webdev",
          "year": "20",
          "img": "1819/web_dev/WebDev_SandyFang_20.jpg"
       },
       {
          "name": "Daniel Glus",
          "team": "Webdev",
-         "position": "Web Dev",
+         "position": "Webdev",
          "year": "20",
          "img": "1819/web_dev/WebDev_DanielGlus_20.jpg"
       },
       {
          "name": "Rachel Lee",
          "team": "Webdev",
-         "position": "Web Dev",
+         "position": "Webdev",
          "year": "20",
          "img": "1819/web_dev/WebDev_RachelLee_20.jpg"
       }

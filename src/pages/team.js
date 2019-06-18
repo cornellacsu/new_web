@@ -19,7 +19,8 @@ class Team extends Component {
     }
 
     render() {
-        const officers = data.officers.filter(officer => officer.team.includes(this.state.activeTeam))
+        // const officers = data.officers.filter(officer => officer.team.includes(this.state.activeTeam))
+        const officers = data.officers
         const teamOptions = [
             {
                 text: 'Leadership',
@@ -54,7 +55,8 @@ class Team extends Component {
                 value: 'Alumni'
             },
         ]
-        
+        const executiveBoard = ["President", "Vice President", "Treasurer", "Secretary"]
+
         return (
             <div>
                 <Navbar activePage="team" />
@@ -70,28 +72,31 @@ class Team extends Component {
                         {' '}Team
                     </Header>
                     <Container>
-                        <Header as="h2" className="officers-header">Team Leads</Header>
+                        <Header as="h2" className="officers-header">{ this.state.activeTeam === "Leadership" ? "Executive Board" : "Team Leads" }</Header>
                         <div className="officers-container">
                             {
                                 officers.filter(officer => {
                                     if (this.state.activeTeam === "Leadership") {
-                                        return officer.position === "President"
+                                        const reducer = (acc, curr) => officer.position.includes(curr) || acc
+                                        return executiveBoard.reduce(reducer, false)
                                     } else {
-                                        return officer.position.includes("Chair")
+                                        return officer.position.includes(this.state.activeTeam + " Chair")
                                     }
                                 }).map((officer, idx) => <Officer key={idx} {...officer} />)
                             }
                         </div>
                     </Container>
                     <Container>
-                        <Header as="h2" className="officers-header">Officers</Header>
+                        <Header as="h2" className="officers-header">{ this.state.activeTeam === "Leadership" ? "Team Leads" : "Officers" }</Header>
                         <div className="officers-container">
                             {
                                 officers.filter(officer => {
+                                    console.log(officer.position)
+                                    console.log(officer.position.includes("Chair"))
                                     if (this.state.activeTeam === "Leadership") {
-                                        return officer.position !== "President"
+                                        return officer.position.includes("Chair")
                                     } else {
-                                        return !officer.position.includes("Chair")
+                                        return !officer.position.includes("Chair") && officer.team === this.state.activeTeam
                                     }
                                 }).map((officer, idx) => <Officer key={idx} {...officer} />)
                             }
