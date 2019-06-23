@@ -1,0 +1,48 @@
+.officer {
+    width: 220px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    margin: 10px;
+}
+
+.officer img {
+    border-radius: 10px;
+}
+
+.officer a {
+    color: #959595;   
+    text-decoration: none;
+}
+
+.officer h5, .officer p {
+    font-family: Trebuchet MS;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+}
+
+.officer h5 {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.officer p {
+    font-size: 18px;
+    color: #959595;
+}
+
+@media only screen and (max-width: 768px) {
+    .officer {
+        width: 150px;
+    }
+
+    .officer h5 {
+        font-size: 16px;
+    }
+    
+    .officer p {
+        font-size: 14px;
+        color: #959595;
+    }
+}

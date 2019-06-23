@@ -3,10 +3,10 @@ import React from "react"
 import Navbar from "../components/navbar"
 import 'semantic-ui-less/semantic.less'
 
-const Index = () => (
+const Sponsors = () => (
     <div>
-        <Navbar activePage="index" />
+        <Navbar activePage="sponsors" />
     </div>
 )
 
-export default Index
+export default Sponsors

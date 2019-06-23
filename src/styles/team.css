@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+.container.fluid {
+    padding: 30px 150px;
+}
+
+.ui.header.team-header {
+    text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    color: #4385F4;
+}
+
+.ui.dropdown {
+    border-bottom: 4px solid #4385F4;
+}
+
+.ui.dropdown:hover {
+    color: #9fc0f9;
+}
+
+.ui.dropdown .menu {
+    background-color: white;
+}
+
+.ui.dropdown .menu > .item {
+    font-size: 20px;
+    color: #4385F4;
+}
+
+.ui.dropdown .menu > .item.selected {
+    font-size: 20px;
+    color: #4385F4;
+}
+
+.ui.image.background-illustration {
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    right: 0;
+    height: 500px;
+    width: auto;
+    margin-top: -250px;
+    margin-right: -100px;
+    opacity: 0.2;
+}
+
+@media only screen and (max-width: 768px) {
+    .container.fluid {
+        margin-top: 70px;
+        padding: 10px;
+    }
+
+    .ui.header.team-header {
+        padding-top: 10px;
+        font-size: 32px;
+    }
+
+    .officer {
+        width: 130px;
+    }
+
+    .ui.image.background-illustration {
+        display: none;
+    }
+}

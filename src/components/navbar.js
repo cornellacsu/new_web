@@ -1,93 +1,68 @@
 import { Link } from "gatsby"
-import { Menu, Dropdown, Container, Image, Header, Grid } from "semantic-ui-react"
-import PropTypes from "prop-types"
-import React from "react"
+import { Menu, Image, Icon } from "semantic-ui-react"
+import React, { Component } from "react"
 import "../styles/navbar.css"
 
-const Navbar = ({ siteTitle }) => (
-    <div>
-    <Container textAlign="center" className="site-header">
-      <Header 
-        className="orgname"
-        as={Link}
-        to="/"
-      >
-        <Image
-          className="logo"
-          // TODO replace w/ local paths
-          src="images/logo_ACSU.png"
-          //src="https://acsu.cornell.edu/img/logo_ACSU_short_transparent.png"
-          /> ACSU
-        </Header>
-    </Container>
+const MOBILE_BREAKPOINT = 768;
+
+class Navbar extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            navbarVisible: true
+        }
+    }
+
+    toggleNavbar = () => {
+        this.setState(prevState => ({ navbarVisible: !prevState.navbarVisible }))
+    }
     
-    <Menu borderless stackable>
-    <Container className="navbar">
-        <Dropdown item text="ABOUT">
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} to="/about" text="WHAT IS ACSU?" />
-            <Dropdown.Item>OFFICERS</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+    resize = () => {
+        let shouldShowNavbar = window.innerWidth > MOBILE_BREAKPOINT
+        if (shouldShowNavbar !== this.state.navbarVisible) {
+            this.setState({ navbarVisible: shouldShowNavbar })
+        }
+    }
 
-        <Dropdown item text="EVENTS">
-          <Dropdown.Menu>
-            <Dropdown.Item>CALENDAR</Dropdown.Item>
-            <Dropdown.Item>G-BODY</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+    componentDidMount() {
+        window.addEventListener("resize", this.resize)
+        this.resize()
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.resize)
+    }
 
-        <Dropdown item text="RESOURCES">
-          <Dropdown.Menu>
-            <Dropdown.Item>ACSU README</Dropdown.Item>
-            <Dropdown.Item>RESUME BOOK</Dropdown.Item>
-            <Dropdown.Item>CS WIKI</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+    render() {
+        const { activePage } = this.props
+        const pages = ["team", "events", "resources", "sponsors", "join"]
 
-        <Menu.Item as="a"
-          name="Sponsor"
-        >
-          SPONSOR
-          </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Hacsu"
-        >
-          HACSU
-        </Menu.Item>
-
-        <Menu.Item as="a"
-          name="Hacsu"
-        >
-          JOIN
-        </Menu.Item>
-
-        <Menu.Item as="a" header>
-        <Image
-          className="social-media-icon"
-          src="https://acsu.cornell.edu/img/icons/facebook-icon2.png"
-        />
-        </Menu.Item>
-
-        <Menu.Item as="a" header>
-        <Image
-          className="social-media-icon"
-          src="https://acsu.cornell.edu/img/icons/insta-icon.png"
-        />
-        </Menu.Item>
-
-      </Container> 
-      </Menu>
-      </div>
-)
-
-Navbar.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navbar.defaultProps = {
-  siteTitle: ``,
+        return (
+            <nav className="navbar">
+                <Icon id="mobile-hamburger" name={ this.state.navbarVisible ? "times" : "bars" } onClick={this.toggleNavbar} />
+                <Link className="logo" to="/">
+                    <Image className="logo-image" src="images/logo_ACSU.png" />
+                    <span>ACSU</span>
+                </Link>
+                <Menu className={ this.state.navbarVisible ? "navbar-links visible" : "navbar-links hidden" } borderless stackable widths={5}>
+                    {
+                        pages.map((page, idx) => 
+                            <Menu.Item
+                                key={idx}
+                                className={idx !== pages.length - 1 ? "link" : "link last"}
+                                as={Link}
+                                to={`/${page}`}
+                                name={page}
+                                active={activePage === page}
+                            >
+                                <span>{page.charAt(0).toUpperCase() + page.slice(1)}</span>
+                            </Menu.Item>
+                        )
+                    }
+                </Menu>
+            </nav>
+        )
+    }
 }
 
 export default Navbar

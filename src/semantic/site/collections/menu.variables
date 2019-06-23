@@ -12,6 +12,7 @@
 
 @itemFontWeight: @bold;
 @itemVerticalPadding: 20px;
+@itemHorizontalPadding: @relativeMassive;
 
 @selectedTextColor: @white;
 @selectedItemTextColor: @white;

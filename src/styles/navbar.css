@@ -1,20 +1,132 @@
-.ui.header.orgname {
-	font-size: 4rem;
+.navbar {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	display: flex;
+	height: 70px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+	background-color: white;
 }
 
-.ui.header .ui.image.logo {
-	width: 1.5em;
+.navbar .ui.menu {
 	margin-top: 0;
 }
 
-.ui.image.social-media-icon {
-	max-width: 20px;
+.navbar .ui.menu .active.item {
+	background-color: #585858;
 }
 
-.ui.container.site-header {
-	margin-top: 1.5em;
+.navbar .ui.menu .active.item:hover {
+	background-color: #585858;
 }
 
-.ui.container.navbar {
-	width: unset;
+#mobile-hamburger {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: black;
+	line-height: 50px;
+	height: 50px;
+	font-size: 35px;
+	cursor: pointer;
+	display: none;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	margin-left: 15px;
+	margin-right: 45px;
+	width: 200px;
+}
+
+.logo span {
+	margin-left: 10px;
+	font-size: 32px;
+	line-height: 70px;
+	color: black;
+}
+
+.logo-image {
+	height: 50px;
+	width: 50px;
+}
+
+.last {
+	margin-right: -10px;
+}
+
+/* .last:after {
+	width: 10px;
+	height: 70px;
+	background-color: #C41230;
+	position: absolute;
+	right: 0;
+	content: "";
+	transform: skewX(15deg);
+	z-index: 10000;
+} */
+
+.navbar-links {
+	flex-grow: 1;
+	align-items: stretch;
+	height: 70px;
+	transform: skewX(-15deg);
+}
+
+.link {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-size: 20px;
+	/* transform: skewX(-15deg); */
+}
+
+.link span {
+	transform: skewX(15deg);
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		height: auto;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	
+	.navbar-links.visible {
+		top: 70px;
+	}
+
+	.navbar-links.hidden {
+		top: -650px;
+	}
+
+	.navbar-links {
+		position: fixed;
+		z-index: 1000;
+		width: 100%;
+		height: auto;
+		transition: .3s all ease-in-out;
+		transform: skewX(0deg);
+	}
+	
+	.logo {
+		margin: auto;
+		width: auto;
+	}
+	
+	#mobile-hamburger {
+		display: block;
+	}
+
+	.ui.menu .item.link {
+		padding: 10px 0;
+	}
+
+	.link span {
+		transform: skewX(0deg);
+	}
 }
