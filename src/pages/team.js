@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import { Image, Container, Dropdown, Header } from 'semantic-ui-react'
 import { StaticQuery, graphql } from "gatsby"
 import Navbar from "../components/navbar"
-import Officer from "../components/officer"
+import TeamContainer from '../components/teamContainer'
+import AlumniContainer from '../components/alumniContainer'
 import data from '../data/team.json'
 import "../styles/team.css"
 
@@ -46,15 +47,14 @@ class Team extends Component {
                 value: 'Publicity'
             },
             {
-                text: 'Webdev',
-                value: 'Webdev'
+                text: 'WebDev',
+                value: 'WebDev'
             },
             {
                 text: 'Alumni',
                 value: 'Alumni'
             },
         ]
-        const executiveBoard = ["President", "Vice President", "Treasurer", "Secretary"]
 
         return (
             <div>
@@ -72,45 +72,9 @@ class Team extends Component {
                     </Header>
                     {
                         this.state.activeTeam !== "Alumni" ?
-                        <>
-                            <Container>
-                                <Header as="h2" className="officers-header">{ this.state.activeTeam === "Leadership" ? "Executive Board" : "Team Leads" }</Header>
-                                <div className="officers-container">
-                                    {
-                                        officers.filter(officer => {
-                                            if (this.state.activeTeam === "Leadership") {
-                                                const reducer = (acc, curr) => officer.position.includes(curr) || acc
-                                                return executiveBoard.reduce(reducer, false)
-                                            } else {
-                                                return officer.position.includes(this.state.activeTeam + " Chair")
-                                            }
-                                        }).map((officer, idx) => <Officer key={idx} {...officer} />)
-                                    }
-                                </div>
-                            </Container>
-                            <Container>
-                                <Header as="h2" className="officers-header">{ this.state.activeTeam === "Leadership" ? "Team Leads" : "Officers" }</Header>
-                                <div className="officers-container">
-                                    {
-                                        officers.filter(officer => {
-                                            if (this.state.activeTeam === "Leadership") {
-                                                return officer.position.includes("Chair")
-                                            } else {
-                                                return !officer.position.includes("Chair") && officer.team === this.state.activeTeam
-                                            }
-                                        }).map((officer, idx) => <Officer key={idx} {...officer} />)
-                                    }
-                                </div>
-                            </Container>
-                        </>
+                            <TeamContainer activeTeam={this.state.activeTeam} officers={officers} />
                         :
-                        <Container>
-                            <div className="officers-container">
-                                {
-                                    data.alumni.map((officer, idx) => <Officer key={idx} {...officer} />)
-                                }
-                            </div>
-                        </Container>
+                            <AlumniContainer alumni={data.alumni} />
                     }
                     
                 </Container>

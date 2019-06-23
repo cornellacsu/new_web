@@ -13,18 +13,6 @@
     color: #4385F4;
 }
 
-.ui.header.officers-header {
-    font-family: Comfortaa;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 28px;
-}
-
-.officers-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .ui.dropdown {
     border-bottom: 4px solid #4385F4;
 }
@@ -68,10 +56,6 @@
     .ui.header.team-header {
         padding-top: 10px;
         font-size: 32px;
-    }
-
-    .ui.header.officers-header {
-        font-size: 22px;
     }
 
     .officer {

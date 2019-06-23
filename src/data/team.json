@@ -82,8 +82,8 @@
         },
         {
             "name": "Eric Feng",
-            "team": "Webdev",
-            "position": "Webdev Chair",
+            "team": "WebDev",
+            "position": "WebDev Chair",
             "year": "20",
             "img": "1819/web_dev/WebDev_EricFeng_20.jpg"
         },
@@ -292,22 +292,22 @@
         },
         {
             "name": "Sandy Fang",
-            "team": "Webdev",
-            "position": "Webdev",
+            "team": "WebDev",
+            "position": "WebDev",
             "year": "20",
             "img": "1819/web_dev/WebDev_SandyFang_20.jpg"
         },
         {
             "name": "Daniel Glus",
-            "team": "Webdev",
-            "position": "Webdev",
+            "team": "WebDev",
+            "position": "WebDev",
             "year": "20",
             "img": "1819/web_dev/WebDev_DanielGlus_20.jpg"
         },
         {
             "name": "Rachel Lee",
-            "team": "Webdev",
-            "position": "Webdev",
+            "team": "WebDev",
+            "position": "WebDev",
             "year": "20",
             "img": "1819/web_dev/WebDev_RachelLee_20.jpg"
         }

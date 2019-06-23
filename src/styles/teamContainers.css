@@ -1,0 +1,17 @@
+.ui.header.officers-header {
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.officers-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+    .ui.header.officers-header {
+        font-size: 22px;
+    }
+}
