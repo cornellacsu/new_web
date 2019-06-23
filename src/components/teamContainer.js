@@ -21,8 +21,8 @@ const TeamContainer = ({ activeTeam, officers }) => (
                     }).map((officer, idx) => <Officer key={idx} {...officer} />)
                 }
             </div>
-            </Container>
-            <Container>
+        </Container>
+        <Container>
             <Header as="h2" className="officers-header">{ activeTeam === "Leadership" ? "Team Leads" : "Officers" }</Header>
             <div className="officers-container">
                 {
