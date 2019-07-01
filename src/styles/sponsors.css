@@ -1,0 +1,69 @@
+.ui.header.page-title {
+    font-size: 3rem;
+    color: black;
+}
+
+.ui.grid.page-subcontent {
+    margin-top: 2em;
+}
+
+.ui.grid.page-subcontent_bronze {
+    margin-top: 2em;
+}
+
+.page-subcontent .ui.segment {
+    min-height: 100%;
+}
+
+.ui.header.sponsors-title {
+    font-size: 3rem;
+    color: black;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.ui.header.gold {
+    font-size: 4rem;
+    color: gold;
+    margin-bottom: 1em;
+    margin-left: -5em;
+    text-align: center;
+}
+
+.goldrow {
+    margin-left: 5em;
+}
+
+.silverrow {
+    margin-left: 5em;
+}
+
+.goldrow {
+    margin-left: 5em;
+}
+
+.ui.header.silver {
+    font-size: 3rem;
+    color: silver;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.ui.header.bronze {
+    font-size: 2rem;
+    color: brown;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.ui.grid.sponsors-subcontent {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.ui.anduril {
+    background-color: black;
+}
