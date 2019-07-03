@@ -23,6 +23,19 @@
     text-align: center;
 }
 
+.goldrow {
+    margin-left: 5em;
+}
+
+.silverrow {
+    margin-left: 5.5em;
+}
+
+.bronzerow {
+    margin-left: -2em;
+    margin-top: -3em;
+}
+
 .ui.header.gold {
     font-size: 4rem;
     color: gold;
@@ -31,31 +44,21 @@
     text-align: center;
 }
 
-.goldrow {
-    margin-left: 5em;
-}
-
-.silverrow {
-    margin-left: 5em;
-}
-
-.goldrow {
-    margin-left: 5em;
-}
-
 .ui.header.silver {
     font-size: 3rem;
     color: silver;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: -2em;
+    margin-left: -6.5em;
     text-align: center;
 }
 
 .ui.header.bronze {
     font-size: 2rem;
     color: brown;
-    margin-top: 1em;
+    margin-top: 3em;
     margin-bottom: 1em;
+    margin-left: -40em;
     text-align: center;
 }
 

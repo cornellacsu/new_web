@@ -69,7 +69,7 @@ const Sponsors = () => (
         <Container textAlign="justified" text>
             <Grid className="sponsors-subcontent" container columns={4} doubling>
             <Header className="silver" as="h1">Silver</Header>
-                <Grid.Row>
+            <Grid.Row className="silverrow">
                     <GridColumn>
 
                         <a href="https://www.airbnb.com/">
@@ -89,15 +89,15 @@ const Sponsors = () => (
                 </Grid.Row>
 
             </Grid>
-            <Divider />
         </Container>
+        <Divider />
 
         <Container textAlign="justified" text>
             <Grid.Row>
                 <Header className="bronze" as="h1">Bronze</Header>
             </Grid.Row>
             <Grid className="sponsors-subcontent_bronze" container columns={6} doubling>
-                <Grid.Row>
+            <Grid.Row className="bronzerow">
                     <GridColumn>
                         <a href="https://asana.com/">
                             <Image src="images/logos/Asana.png" className="asana" alt="Asana" />
